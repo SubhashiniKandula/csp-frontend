@@ -1,0 +1,176 @@
+.matching-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.tab {
+  background: #f1f5f9;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #334155;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background: #e2e8f0;
+}
+
+.tab.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.badge {
+  background: white;
+  color: #3b82f6;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Match Card */
+.match-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+}
+
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.match-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.name {
+  font-size: 18px;
+  margin: 0;
+  color: #1e293b;
+}
+
+.rating {
+  font-size: 14px;
+  color: #f59e0b;
+}
+
+.location {
+  font-size: 14px;
+  color: #475569;
+}
+
+.bio {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #334155;
+}
+
+.match-percent {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Details */
+.match-details {
+  margin-top: 15px;
+}
+
+.tag, .skill {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 5px 12px;
+  border-radius: 12px;
+  margin: 4px;
+  font-size: 13px;
+}
+
+.skills {
+  margin-top: 10px;
+}
+
+/* Buttons */
+.match-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.accept-btn, .pass-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.accept-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.accept-btn:hover {
+  background: #16a34a;
+}
+
+.pass-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.pass-btn:hover {
+  background: #b91c1c;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #475569;
+  margin-top: 30px;
+}

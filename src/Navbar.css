@@ -1,0 +1,96 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a; /* dark navy */
+  padding: 12px 24px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Circle logo button */
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: #2563eb; /* blue circle */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: rotate(180deg);
+  background: #1e40af; /* darker blue on hover */
+}
+
+.exchange-icon {
+  font-size: 20px;
+  color: white;
+}
+
+/* Logo text */
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f9fafb;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-links li a:hover {
+  color: #60a5fa; /* light blue */
+}
+
+/* User menu */
+.user-menu {
+  position: relative;
+}
+.user-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #1f2937;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.dropdown a {
+  color: white;
+  padding: 6px 10px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.dropdown a:hover {
+  background: #374151;
+  border-radius: 4px;
+}

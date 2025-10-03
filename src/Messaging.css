@@ -1,0 +1,286 @@
+.messaging-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  border-right: 1px solid #ddd;
+  background:white;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.close-sidebar-btn {
+  margin-left: 8px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.conversations {
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+}
+
+.conversation {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.conversation:hover {
+  background: #eee;
+}
+
+.conversation.active {
+  background: #ddd;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.conversation-info {
+  flex: 1;
+}
+
+.conversation-info .name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.conversation-info .last-message {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+}
+
+.conversation-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.time {
+  font-size: 12px;
+  color: #777;
+}
+
+.unread-badge {
+  background: #ff3b30;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-top: 5px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.open-sidebar-btn {
+  display: none;
+  border: none;
+  background: #eee;
+  padding: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .open-sidebar-btn {
+    display: block;
+  }
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.chat-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.chat-header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.chat-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.chat-header-status {
+  font-size: 13px;
+  color: #4caf50; /* green for online */
+}
+
+.chat-header-status.offline {
+  color: #888;
+}
+
+.chat-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Messages */
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.message {
+  margin: 8px 0;
+  max-width: 60%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.message.me {
+  background: #dcf8c6;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message.other {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message .time {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.sent-icon {
+  color: #888;
+  margin-left: 5px;
+}
+
+.seen-icon {
+  color: #4cafef;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background:black;
+  border-radius: 12px;
+  max-width: fit-content;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* Message Input */
+.message-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.message-input button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 50%;
+  background: #4cafef;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}

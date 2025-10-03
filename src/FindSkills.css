@@ -1,0 +1,309 @@
+.findskills-page {
+  padding: 40px;
+  background: linear-gradient(135deg, #f0f4ff, #fafcff);
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.findskills-page h1 {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.findskills-page p {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto;
+  max-width: 650px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 50px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+.filter-btn {
+  padding: 12px 24px;
+  border: none;
+  background: linear-gradient(90deg, #6366f1, #9333ea);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.filter-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.skills-count {
+  margin: 25px 0 20px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.skill-card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 330px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.skill-card h1 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #eef2ff;
+  color: #444;
+  font-weight: 500;
+}
+
+.badge.level {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge.category {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.rating {
+  margin-left: auto;
+  font-weight: bold;
+  color: #f59e0b;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tag {
+  font-size: 13px;
+  padding: 5px 12px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.request-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.request-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #4338ca, #7e22ce);
+  transform: translateY(-2px);
+}
+
+.request-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.requested {
+  background: #9ca3af !important;
+}
+/* Existing styles above... */
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.modal-content p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.modal-content .bio {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.modal-content .rating {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #e74c3c;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #c0392b;
+}
+
+/* Modal Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Existing styles above... */
+
+/* Modal Request Button */
+.modal-request-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  background: #27ae60;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-request-btn:hover {
+  background: #219150;
+}
+
+.modal-request-btn.requested {
+  background: #2ecc71;
+  color: white;
+  cursor: not-allowed;
+}
+/* Request button inside modal */
+.modal-request {
+  margin-top: 15px;
+  background: #3498db;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.modal-request:hover {
+  background: #2980b9;
+}
