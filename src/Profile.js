@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import "./Profile.css";
 
 const MySkills = () => {
+  const [profile, setProfile] = useState({
+    username: "Subhashini",
+    email: "subhashini@example.com",
+  });
+
+  const [editingProfile, setEditingProfile] = useState(false);
+
   const [skills, setSkills] = useState([
     {
       id: 1,
@@ -59,7 +66,7 @@ const MySkills = () => {
     setShowModal(true);
   };
 
-  const handleSave = () => {
+  const handleSaveSkill = () => {
     if (editingSkill) {
       setSkills(
         skills.map((s) =>
@@ -85,8 +92,12 @@ const MySkills = () => {
     setShowModal(false);
   };
 
-  const handleDelete = (id) => {
+  const handleDeleteSkill = (id) => {
     setSkills(skills.filter((s) => s.id !== id));
+  };
+
+  const handleProfileSave = () => {
+    setEditingProfile(false);
   };
 
   return (
@@ -98,7 +109,41 @@ const MySkills = () => {
           alt="Profile Avatar"
           className="profile-avatar"
         />
-        <h2 className="username">Subhashini</h2>
+
+        {editingProfile ? (
+          <div className="edit-profile-fields">
+            <input
+              type="text"
+              value={profile.username}
+              onChange={(e) =>
+                setProfile({ ...profile, username: e.target.value })
+              }
+              placeholder="Username"
+            />
+            <input
+              type="email"
+              value={profile.email}
+              onChange={(e) =>
+                setProfile({ ...profile, email: e.target.value })
+              }
+              placeholder="Email"
+            />
+            <button className="save-btn" onClick={handleProfileSave}>
+              Save
+            </button>
+          </div>
+        ) : (
+          <div className="profile-info">
+            <h2 className="username">{profile.username}</h2>
+            <p className="email">{profile.email}</p>
+            <button
+              className="edit-btn"
+              onClick={() => setEditingProfile(true)}
+            >
+              ✏️ Edit Profile
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Page Header */}
@@ -137,7 +182,7 @@ const MySkills = () => {
               <h3>{skill.title}</h3>
               <div className="actions">
                 <button onClick={() => handleOpenModal(skill)}>✏️</button>
-                <button onClick={() => handleDelete(skill.id)}>🗑️</button>
+                <button onClick={() => handleDeleteSkill(skill.id)}>🗑️</button>
               </div>
             </div>
             <div className="tags-line">
@@ -221,7 +266,7 @@ const MySkills = () => {
               />
             </div>
             <div className="modal-footer">
-              <button className="save-btn" onClick={handleSave}>
+              <button className="save-btn" onClick={handleSaveSkill}>
                 Save
               </button>
             </div>
