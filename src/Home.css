@@ -1,206 +1,211 @@
-.home-container {
-  min-height: 100vh;
-  background: #f9fafb;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* ---------------- Global ---------------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* ---------------- Hero Section ---------------- */
 .hero {
-  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: white;
-  padding: 60px 20px;
+  height: 60vh; /* reduced header height */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* light mode gradient */
+  color: #fff;
+  padding: 0 20px;
+  transition: all 0.3s ease;
 }
 
-.hero h1 {
+.hero-content h1 {
   font-size: 2.8rem;
-  font-weight: bold;
+  margin-bottom: 20px;
 }
-
-.hero .highlight {
-  color: #facc15;
+.hero-content .highlight {
+  color: #ffd54f; /* bright highlight */
 }
-
-.hero p {
-  margin-top: 10px;
+.hero-content p {
   font-size: 1.1rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
-/* Search Bar */
-.search-bar {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+/* ---------------- Why SkillSwap Section ---------------- */
+.why-skillswap {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.search-bar input {
-  width: 400px;
-  padding: 10px 15px;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
+.why-skillswap h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
   color: #333;
 }
 
-.search-bar button {
-  margin-left: 10px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  background: #facc15;
-  font-weight: bold;
-  color: #222;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.search-bar button:hover {
-  background: #fbbf24;
-}
-
-/* Skills Section */
-.skills-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.skills-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.skill-card {
-  background: white;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Level & Category */
-.level-category {
+.cards {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.level {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.level.expert {
-  background: #d1fae5;
-  color: #065f46;
-}
-
-.level.intermediate {
-  background: #fef9c3;
-  color: #854d0e;
-}
-
-.level.advanced {
-  background: #dbeafe;
-  color: #1e3a8a;
-}
-
-.category {
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-/* Description */
-.description {
-  font-size: 0.95rem;
-  color: #4b5563;
-  margin-bottom: 15px;
-}
-
-/* User Info */
-.user-info {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.user-info img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.user-info .name {
-  font-weight: 600;
-}
-
-.user-info .location {
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-/* Tags */
-.tags {
-  display: flex;
+  justify-content: center;
+  gap: 30px;
   flex-wrap: wrap;
-  gap: 8px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  width: 250px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card .icon {
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
-.tags span {
-  background: #f3f4f6;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  color: #374151;
+/* ---------------- How It Works Section ---------------- */
+.how-it-works {
+  padding: 80px 20px;
+  background: #ffffff;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Request Button */
-.request-btn {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: bold;
-  background: #8b5cf6;
-  color: white;
+.how-it-works h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #f0f4ff;
+  border-radius: 15px;
+  width: 220px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+/* ---------------- CTA Section ---------------- */
+.cta {
+  padding: 80px 20px;
+  background: #ff6f61;
+  text-align: center;
+  color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 40px;
+  font-size: 1rem;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-.request-btn:hover {
-  background: #7c3aed;
+.btn.primary {
+  background: #ffd54f;
+  color: #333;
 }
 
-.request-btn.requested {
-  background: #e5e7eb;
-  color: #6b7280;
-  cursor: not-allowed;
+.btn.primary:hover {
+  transform: scale(1.05);
 }
 
-.no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  color: #6b7280;
-  font-size: 1rem;
+.btn.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn.secondary:hover {
+  background: #fff;
+  color: #333;
+}
+
+/* ---------------- Dark Mode Overrides ---------------- */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Hero Dark Mode */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+  color: #fff;
+}
+
+/* Why SkillSwap Dark Mode */
+body.dark-mode .why-skillswap {
+  background: #1f1f1f;
+  color: #e0e0e0;
+}
+body.dark-mode .cards .card {
+  background: #2c2c2c;
+  color: #e0e0e0;
+}
+
+/* How It Works Dark Mode */
+body.dark-mode .how-it-works {
+  background: #2a2a2a;
+  color: #e0e0e0;
+}
+body.dark-mode .step {
+  background: #3a3a3a;
+  color: #e0e0e0;
+}
+
+/* CTA Dark Mode */
+body.dark-mode .cta {
+  background: #444;
+  color: #ffd54f;
+}
+body.dark-mode .btn.primary {
+  background: #333;
+  color: #ffd54f;
+}
+body.dark-mode .btn.secondary {
+  color: #ffd54f;
+  border: 2px solid #ffd54f;
 }
