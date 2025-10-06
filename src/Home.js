@@ -1,149 +1,90 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
-const skillsData = [
-  {
-    id: 1,
-    title: "JavaScript Programming",
-    level: "Advanced",
-    category: "Programming",
-    description: "Modern JavaScript development including ES6+, React, Node.js",
-    name: "Sarah Johnson",
-    location: "San Francisco, CA",
-    rating: 4.8,
-    tags: ["javascript", "react", "nodejs"],
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    id: 2,
-    title: "Graphic Design",
-    level: "Expert",
-    category: "Design",
-    description:
-      "Logo design, branding, digital illustrations using Adobe Creative Suite",
-    name: "Emily Carter",
-    location: "New York, USA",
-    rating: 4.9,
-    tags: ["photoshop", "illustrator", "branding"],
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-  },
-  {
-    id: 3,
-    title: "Spanish Language",
-    level: "Intermediate",
-    category: "Languages",
-    description: "Conversational Spanish for travel and business",
-    name: "Maria Rodriguez",
-    location: "Barcelona, Spain",
-    rating: 4.7,
-    tags: ["spanish", "conversation", "grammar"],
-    avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-  },
-];
-
 const Home = () => {
-  const [requested, setRequested] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleRequest = (id) => {
-    if (!requested.includes(id)) {
-      setRequested([...requested, id]);
-    }
-  };
-
-  // Filter skills based on search term
-  const filteredSkills = skillsData.filter((skill) =>
-    `${skill.title} ${skill.category} ${skill.description} ${skill.name} ${skill.tags.join(" ")}`
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
-  );
+  const navigate = useNavigate();
 
   return (
     <div className="home-container">
       {/* Hero Section */}
-      <div className="hero">
-        <h1>
-          Share Skills, <span className="highlight">Build Dreams</span>
-        </h1>
-        <p>
-          Connect with learners and teachers worldwide. Exchange knowledge,
-          grow together, and build a community of lifelong learners.
-        </p>
-
-        {/* Search Bar */}
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="What skill would you like to learn today?"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button>Search</button>
+      <section className="hero">
+        <div className="hero-content">
+          <h1>
+            Learn, Teach & <span className="highlight">Grow Together</span>
+          </h1>
+          <p>
+            SkillSwap connects learners and teachers worldwide. Share your knowledge, 
+            acquire new skills, and be part of a thriving community.
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* Featured Skills */}
-      <div className="skills-section">
-        <h2>Featured Skills</h2>
-
-        <div className="skills-grid">
-          {filteredSkills.length > 0 ? (
-            filteredSkills.map((skill) => (
-              <div key={skill.id} className="skill-card">
-                {/* Level & Category */}
-                <div className="level-category">
-                  <span
-                    className={`level ${
-                      skill.level === "Expert"
-                        ? "expert"
-                        : skill.level === "Intermediate"
-                        ? "intermediate"
-                        : "advanced"
-                    }`}
-                  >
-                    {skill.level}
-                  </span>
-                  <span className="category">{skill.category}</span>
-                </div>
-
-                <h3>{skill.title}</h3>
-                <p className="description">{skill.description}</p>
-
-                {/* User Info */}
-                <div className="user-info">
-                  <img src={skill.avatar} alt={skill.name} />
-                  <div>
-                    <p className="name">{skill.name}</p>
-                    <p className="location">{skill.location}</p>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="tags">
-                  {skill.tags.map((tag, index) => (
-                    <span key={index}>#{tag}</span>
-                  ))}
-                </div>
-
-                {/* Request Button */}
-                <button
-                  onClick={() => handleRequest(skill.id)}
-                  disabled={requested.includes(skill.id)}
-                  className={`request-btn ${
-                    requested.includes(skill.id) ? "requested" : ""
-                  }`}
-                >
-                  {requested.includes(skill.id) ? "Requested" : "Request"}
-                </button>
-              </div>
-            ))
-          ) : (
-            <p className="no-results">No skills found. Try another search.</p>
-          )}
+      {/* Why SkillSwap Section */}
+      <section className="why-skillswap">
+        <h2>Why SkillSwap?</h2>
+        <div className="cards">
+          <div className="card">
+            <div className="icon">📚</div>
+            <h3>New Skills</h3>
+            <p>
+              Learn programming, design, languages, and more from experienced mentors.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">💡</div>
+            <h3>Knowledge Sharing</h3>
+            <p>
+              Teach what you know and help others grow while gaining recognition.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">🤝</div>
+            <h3>Community Driven</h3>
+            <p>
+              Connect with learners and mentors globally, collaborate, and share ideas.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="how-it-works">
+        <h2>How It Works</h2>
+        <div className="steps">
+          <div className="step">
+            <div className="step-icon">📝</div>
+            <h3>1. Sign Up</h3>
+            <p>Create your free profile and set your skills to teach or learn.</p>
+          </div>
+          <div className="step">
+            <div className="step-icon">🔍</div>
+            <h3>2. Explore Skills</h3>
+            <p>Browse skills, find mentors, and choose what you want to learn.</p>
+          </div>
+          <div className="step">
+            <div className="step-icon">🚀</div>
+            <h3>3. Connect & Learn</h3>
+            <p>Start learning, share knowledge, and grow together with the community.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta">
+        <h2>Ready to Start Learning?</h2>
+        <div className="cta-buttons">
+          <button className="btn secondary" onClick={() => navigate("/about")}>
+            Learn More
+          </button>
+          <button className="btn primary" onClick={() => navigate("/profile")}>
+            Get Started
+          </button>
+        </div>
+      </section>
     </div>
   );
 };
 
 export default Home;
+
